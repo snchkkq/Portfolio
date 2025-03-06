@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A portfolio of Alexander showcasing web design, frontend development, and React skills." />
+    <meta name="keywords" content="portfolio, web design, frontend development, React" />
+    <meta name="author" content="Alexander" />
+    <link rel="stylesheet" href="style.css">
+    <title>Projects</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a class="logo__link" href="../index.html">
+                <h1><span class="logo__highlight">A</span>lexander.</h1>
+            </a>
+        </div>
+        <nav class="header__nav">
+            <ul class="nav__list" id="side__list">
+                <li class="nav__item"><a class="nav__link" href="../about/index.html">About</a></li>
+                <li class="nav__item"><a class="nav__link" href="index.html">Projects</a></li>
+                <li class="nav__item"><a class="nav__link" href="../skills/index.html">Skills & Services</a></li>
+                <li class="nav__item"><a class="nav__link" href="../index.html#contacts">Contacts</a></li>
+                <ion-icon class="menu__icon" name="close-outline" onclick="closeMenu()"></ion-icon>
+            </ul>
+            <ion-icon class="menu__icon" name="menu-outline" onclick="openMenu()"></ion-icon>
+        </nav>
+    </header>
+    <main>
+        <section class="projects-container">
+            <div class="project-card" data-id="1">
+                <img src="img/{08CCCFF1-48CA-465E-9BBA-BE759CC4A06A}.png" alt="Новостной сайт">
+                <div class="overlay">
+                    <a href="https://inaustralia.co" target="_blank" class="btn web-btn">Web</a>
+                    <button class="btn about-btn">About</button>
+                </div>
+                <div class="project-description">
+                    <div class="project-text">
+                        <h2>News WebSite</h2>
+                        <br>
+                        <p>A news site ordered by an American company. It was developed by me (Design) and two other people, my friends. Written in React, fully adapted for all devices. Currently not used.</p>                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="section">
+        <p>© 2024 <span class="footer__highlight">A</span>lexander. <span class="footer__highlight">A</span>ll rights reserved.</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

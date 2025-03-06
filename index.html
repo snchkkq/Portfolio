@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A portfolio of Alexander showcasing web design, frontend development, and React skills." />
+    <meta name="keywords" content="portfolio, web design, frontend development, React" />
+    <meta name="author" content="Alexander" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a class="logo__link" href="index.html">
+                <h1><span class="logo__highlight">A</span>lexander.</h1>
+            </a>
+        </div>
+        <nav class="header__nav">
+            <ul class="nav__list" id="side__list">
+                <li class="nav__item"><a class="nav__link" href="about/index.html">About</a></li>
+                <li class="nav__item"><a class="nav__link" href="projects/index.html">Projects</a></li>
+                <li class="nav__item"><a class="nav__link" href="skills/index.html">Skills & Services</a></li>
+                <li class="nav__item"><a class="nav__link" href="#contacts">Contacts</a></li>
+                <ion-icon class="menu__icon" name="close-outline" onclick="closeMenu()"></ion-icon>
+            </ul>
+            <ion-icon class="menu__icon" name="menu-outline" onclick="openMenu()"></ion-icon>
+        </nav>
+    </header>
+
+    <main>
+        <section class="home section">
+            <div class="home__container">
+                <h1 class="home__title">Hello, my name <span class="home__highlight">Alexander</span></h1>
+                <h3 class="home__subtitle">I'm a <span class="typing-text"></span></h3>
+            </div>
+        </section>
+
+        <section class="about section">
+            <div class="about__container">
+                <div class="about__details">
+                    <h1 class="about__title">About Me</h1>
+                    <p class="about__text">Hi! My name is Alexander, I am 20 years old, I am from Poland. I'm studying
+                        at a technical school
+                        on the profile of a programmer. I am engaged in web development, I know HTML, CSS, Bootstrap,
+                        basics of JavaScript and React. I am constantly learning and developing to create stylish and
+                        functional web applications.</p>
+                    <!-- ====== Tabs ====== -->
+                    <div class="about__tabs">
+                        <div class="tabs__titles">
+                            <button class="tabs__button activate-link" data-target="skills">Skills</button>
+                            <button class="tabs__button" data-target="experience">Experience</button>
+                        </div>
+                        <div class="tabs__contents">
+                            <div class="tabs__content" id="skills">
+                                <ul class="skills-experience__list">
+                                    <li class="skills-experience__item"><span class="skills-experience__highlight">HTML & CSS</span><br>Basics of layout, creating adaptive pages, Flexbox, Grid, styling using CSS3.</li>
+                                    <li class="skills-experience__item"><span class="skills-experience__highlight">JavaScript</span><br>Working with language basics, asynchronous code (Promises, async/await), DOM manipulation.</li>
+                                    <li class="skills-experience__item"><span class="skills-experience__highlight">React</span><br>Component approach, use of hooks (useState, useEffect), working with state and renderers.</li>
+                                </ul>
+                            </div>
+                            <div class="tabs__content" id="experience">
+                                <ul class="skills-experience__list">
+                                    <li class="skills-experience__item"><span class="skills-experience__highlight">Frontend Developer</span><br>3 years of experience</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ====== Services & Works ====== -->
+        <section class="services section">
+            <h1 class="services__title">My Services</h1>
+            <div class="services__list">
+                <div class="services__item">
+                    <ion-icon class="services__icon" name="desktop-outline"></ion-icon>
+                    <h2 class="services__name web">Web Design</h2>
+                    <p class="services__description">Create visually appealing and responsive website layouts.</p>
+                    <a class="services__button" href="skills/index.html#services">Learn More</a>
+                </div>
+                <div class="services__item">
+                    <ion-icon class="services__icon" name="code-slash"></ion-icon>
+                    <h2 class="services__name">Frontend Development</h2>
+                    <p class="services__description">Develop user-friendly and interactive interfaces.</p>
+                    <a class="services__button" href="skills/index.html#services">Learn More</a>
+                </div>
+                <div class="services__item">
+                    <ion-icon class="services__icon" name="logo-react"></ion-icon>
+                    <h2 class="services__name">React Development</h2>
+                    <p class="services__description">Developing dynamic applications using React.</p>
+                    <a class="services__button" href="skills/index.html#services">Learn More</a>
+                </div>
+            </div>
+        </section>
+        <section class="projects section">
+            <h1 class="projects__title">My Work</h1>
+            <div class="projects__list">
+                <div class="projects__item">
+                    <img class="projects__image" src="img/EH+Sherman+Portfolio.jpg" alt="Project 1">
+                    <div class="projects__overlay">
+                        <h2 class="projects__name">News Website</h2>
+                        <p class="projects__description">
+                            A dynamic news website for Australia, built for an American company.
+                        </p>
+                        <a href="projects/index.html" class="projects__button"><ion-icon name="open-outline"></ion-icon></a>
+                    </div>
+                </div>
+                <div class="projects__item">
+                    <div class="projects__overlay">
+                        <h2 class="projects__name">Empty</h2>
+                        <p class="projects__description">
+                            Here are some of my other projects coming soon.
+                        </p>
+                        <a href="projects/index.html" class="projects__button"><ion-icon name="open-outline"></ion-icon></a>
+                    </div>
+                </div>
+                <div class="projects__item">
+                    <div class="projects__overlay">
+                        <h2 class="projects__name">Empty</h2>
+                        <p class="projects__description">
+                            Here are some of my other projects coming soon.
+                        </p>
+                        <a href="projects/index.html" class="projects__button"><ion-icon name="open-outline"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts section" id="contacts">
+            <div class="contact__container">
+                <h1 class="contacts__title">Contact Me</h1>
+                <div class="contacts__mail">
+                    <ion-icon class="contacts__icon" name="mail"></ion-icon>
+                    <p>alexchannel1994@gmail.com</p>
+                </div>
+                <br>
+                <div class="contacts__number">
+                    <ion-icon class="contacts__icon" name="call"></ion-icon>
+                    <p>+48 573 881 456</p>
+                </div>
+                <br>
+                <div class="contacts__nav">
+                    <ul class="contacts__list">
+                        <li class="contacts__item">
+                            <a class="contacts__link" target="_blank" href="https://www.instagram.com/snchkkq/"><ion-icon name="logo-instagram"></ion-icon></a>
+                        </li>
+                        <li>
+                            <a class="contacts__link" target="_blank" href="https://www.facebook.com/snchkkq"><ion-icon name="logo-facebook"></ion-icon></a>
+                        </li>
+                        <li>
+                            <a class="contacts__link" target="_blank" href="https://t.me/snchkkq"><i class="fa fa-telegram telegram" style="font-size:26px;"></i></a>
+                        </li>
+                        <li>
+                            <a class="contacts__link" target="_blank" href="https://discord.com/users/582111870379360256"><ion-icon name="logo-discord"></ion-icon></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="section">
+        <p>© 2024 <span class="footer__highlight">A</span>lexander. <span class="footer__highlight">A</span>ll rights reserved.</p>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="scripts/script.js"></script>
+
+</body>
+
+</html>

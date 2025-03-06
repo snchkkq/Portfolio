@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A portfolio of Alexander showcasing web design, frontend development, and React skills." />
+    <meta name="keywords" content="portfolio, web design, frontend development, React" />
+    <meta name="author" content="Alexander" />
+    <link rel="stylesheet" href="style.css">
+    <title>Projects</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a class="logo__link" href="../index.html">
+                <h1><span class="logo__highlight">A</span>lexander.</h1>
+            </a>
+        </div>
+        <nav class="header__nav">
+            <ul class="nav__list" id="side__list">
+                <li class="nav__item"><a class="nav__link" href="../about/index.html">About</a></li>
+                <li class="nav__item"><a class="nav__link" href="../projects/index.html">Projects</a></li>
+                <li class="nav__item"><a class="nav__link" href="index.html">Skills & Services</a></li>
+                <li class="nav__item"><a class="nav__link" href="../index.html#contacts">Contacts</a></li>
+                <ion-icon class="menu__icon" name="close-outline" onclick="closeMenu()"></ion-icon>
+            </ul>
+            <ion-icon class="menu__icon" name="menu-outline" onclick="openMenu()"></ion-icon>
+        </nav>
+    </header>
+    <main>
+        <section class="skills">
+            <h2 class="skills__title">My Skills</h2>
+            <div class="skills__list">
+                <ion-icon class="skill__icon" name="logo-html5"></ion-icon>
+                <div class="skill__progress-bar">
+                    <div class="progress-bar__progress" style="--progress: 90%;"></div>
+                </div>
+            </div>
+            <div class="skills__list">
+                <ion-icon class="skill__icon" name="logo-css3"></ion-icon>
+                <div class="skill__progress-bar">
+                    <div class="progress-bar__progress" style="--progress: 70%;"></div>
+                </div>
+            </div>
+            <div class="skills__list">
+                <ion-icon class="skill__icon" name="logo-javascript"></ion-icon>
+                <div class="skill__progress-bar">
+                    <div class="progress-bar__progress" style="--progress: 30%;"></div>
+                </div>
+            </div>
+            <div class="skills__list">
+                <ion-icon class="skill__icon" name="logo-react"></ion-icon>
+                <div class="skill__progress-bar">
+                    <div class="progress-bar__progress" style="--progress: 40%;"></div>
+                </div>
+            </div>
+        </section>
+        <section class="services section" id="services">
+            <h2 class="services__title">My Services</h2>
+            <div class="services__grid">
+                <div class="service__item">
+                    <h3 class="service__name">Web Design</h3>
+                    <p class="service__description">
+                        I create modern, stylish and functional layouts for sites that not only look spectacular, 
+                        but also user-friendly. I work on adaptive design so that your projects look perfect on any device.
+                    </p>
+                </div>
+                <div class="service__item">
+                    <h3 class="service__name">Frontend Development</h3>
+                    <p class="service__description">
+                        I develop interactive and dynamic web applications using the latest technologies. I take care of code cleanliness, 
+                        speed of loading and high level of user experience (UX).
+                    </p>
+                </div>
+                <div class="service__item">
+                    <h3 class="service__name">React Development</h3>
+                    <p class="service__description">
+                        I specialize in building scalable and performant applications in React. 
+                        I can turn complex problems into elegant solutions using components, hooks, and Redux.
+                    </p>
+                </div>
+                <div class="service__item">
+                    <h3 class="service__name">Adaptive Design</h3>
+                    <p class="service__description">
+                        I develop responsive websites that look great on all devices, from smartphones to desktops. 
+                        Your users will always get the best experience, no matter what device they're accessing from.
+                    </p>
+                </div>
+                <div class="service__item">
+                    <h3 class="service__name">SEO Optimization</h3>
+                    <p class="service__description">
+                        I will help to increase the visibility of your site in search engines. I optimize meta tags, improve loading speed and content so that your site will be on the first positions.
+                    </p>
+                </div>
+                <div class="service__item">
+                    <h3 class="service__name">Development of user interfaces (UI/UX)</h3>
+                    <p class="service__description">
+                        I create user-friendly and intuitive interfaces that deliver the best user experience. 
+                        I apply modern UI and UX design techniques to create attractive and functional solutions.
+                    </p>
+                </div>                
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 <span class="footer__highlight">A</span>lexander. <span class="footer__highlight">A</span>ll rights reserved.</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

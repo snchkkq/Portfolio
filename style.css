@@ -1,0 +1,748 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ====== Default Settings ====== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Poppins", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: black;
+    opacity: 0;
+    transform: translateY(50px); /* Чтобы элементы слегка "поднимались" при появлении */
+    animation: fadeIn 1.5s ease-out forwards; /* Анимация для плавного появления */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Когда элементы появляются, они возвращаются в нормальное положение */
+    }
+}
+
+/* ====== ScrollBar ====== */
+
+.smooth-scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #fe1d4e;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* ====== Header ====== */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.header__logo {
+    cursor: default;
+}
+
+.logo__link {
+    color: white;
+}
+
+.logo__highlight {
+    color: #fe1d4e;
+}
+
+.nav__list {
+    display: flex;
+    gap: 3em;
+}
+
+.nav__link {
+    position: relative;
+    color: white;
+    padding: 0 10px;
+    transition: all .5s ease-in-out;
+}
+
+.nav__link::before {
+    position: absolute;
+    content: "";
+    background-color: #fe1d4e;
+    height: 2px;
+    left: 0;
+    bottom: -10px;
+    width: 0%;
+    transition: all .3s ease;
+}
+
+.nav__link:hover::before {
+    width: 100%;
+}
+
+.nav__link:hover {
+    color: #fe1d4e;
+}
+
+.nav__item {
+    margin: 10px 0;
+}
+
+.menu__icon {
+    display: none;
+}
+
+/* ====== Main Settings ===== */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 10em;
+}
+
+main, .home {
+    display: flex;
+    gap: -20em;
+}
+
+/* ====== Main Section (Home) ====== */
+
+.home {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 8em;
+}
+
+.home__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+    user-select: none;
+}
+
+.home__title {
+    font-size: 60px;
+}
+
+.home__highlight {
+    color: #fe1d4e;
+}
+
+.home__subtitle {
+    font-size: 40px;
+}
+
+/* ====== Animation Typing Text ====== */
+
+.home__subtitle {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text {
+    position: relative;
+    color: #fe1d4e;
+}
+
+.typing-text::before {
+    content: "Frontent Developer";
+    animation: words 20s infinite;
+}
+
+.typing-text::after {
+    content: "";
+    background-color: transparent;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-right: 3px solid black;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-right: 3px solid #fe1d4e;
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "Frontend Developer";
+    }
+
+    21%, 40% {
+        content: "Web Designer";
+    }
+
+    41%, 60% {
+        content: "Bootstrap Integrater";
+    }
+
+    61%, 80% {
+        content: "React Developer";
+    }
+
+    81%, 100% {
+        content: "Responsive Designer";
+    }
+
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
+
+/* ====== Opacity For Sections ====== */
+
+.section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ====== Section About (Second Block) ====== */
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    gap: 5em;
+    width: 100%;
+}
+
+.about__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3em;
+    width: 100%;
+}
+
+.about__details {
+    cursor: default;
+    color: white;
+    text-align: left;
+    width: 500px;
+}
+
+.about__title {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.about__text {
+    font-size: 14px;
+}
+
+/* ====== Tabs (Skills, Experience) ====== */
+
+.about__tabs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5em;
+    margin-top: 1.2em;
+}
+
+.tabs__titles {
+    user-select: none;
+    color: white;
+    display: flex;
+    gap: 3.5em;
+    width: 100%;
+}
+
+.tabs__button {
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    border: none;
+    background: none;
+    color: white;
+}
+
+.tabs__button::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fe1d4e;
+    transition: width 0.4s ease;
+}
+
+.tabs__button.active::after {
+    width: 50%;
+}
+
+.tabs__contents {
+    width: 100%;
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.tabs__content {
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0s 0.4s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Стиль для видимой вкладки */
+.tabs__content.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0s 0s;
+}
+
+.tabs__button.active::after {
+    width: 50%;
+}
+
+.skills-experience__highlight {
+    color: #fe1d4e;
+}
+
+.tabs__content.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0s 0s;
+}
+
+.skills-experience__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ====== Services & Works Section ====== */
+
+.services .services__title,
+.projects .projects__title {
+    display: flex;
+    justify-content: left;
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+/* ====== Services ====== */
+
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    user-select: none;
+}
+
+.services__list {
+    display: flex;
+    gap: 3em;
+}
+
+.services__item {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1em;
+    background-color: #262626;
+    border-radius: 12px;
+    padding: 0 40px;
+    transition: all .5s ease-in-out;
+}
+
+.services__item:hover {
+    transform: translateY(-15px);
+    background-color: #fe1d4e;
+}
+
+.services__icon {
+    font-size: 60px;
+    color: white;
+}
+
+.services__name {
+    font-weight: 500;
+    color: white;   
+}
+
+.services__description {
+    color: white;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.services__button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.services__button:hover {
+    text-decoration: underline;
+}
+
+/* ====== Projects ====== */
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    user-select: none;
+}
+
+.projects__list {
+    display: flex;
+    gap: 3em;
+}
+
+.projects__item {
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+    height: 450px;
+    border: 2px solid #fe1d4e;
+    border-radius: 12px;
+    color: white;
+}
+
+.projects__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.projects__overlay {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #fe1d4e);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    transition: height 0.5s;
+    backdrop-filter: blur(8px);
+}
+
+.projects__item:hover .projects__overlay {
+    height: 100%;
+}
+
+.projects__name {
+    font-weight: 500px;
+    margin-bottom: 20px;
+}
+
+.projects__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    color: #fe1d4e;
+    font-size: 22px;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* ====== My Contacts ====== */
+
+.contacts {
+    color: white;
+}
+
+.contact__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contacts__title {
+    font-size: 50px;
+    font-weight: 600;
+    cursor: default;
+    user-select: none;
+}
+
+.contacts__mail, .contacts__number {
+    display: inline-flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.contacts__icon {
+    font-size: 25px;
+    color: #fe1d4e;
+}
+
+.contacts__list {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.contacts__link {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: gray;
+    transition: all .3s ease-in-out;
+}
+
+.contacts__link:hover {
+    transform: scale(1.2);
+    color: #fe1d4e;
+}
+
+/* ====== Footer ====== */
+
+footer {
+    cursor: default;
+    user-select: none;
+    color: white;
+    margin-top: 8em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+}
+
+.footer__highlight {
+    color: #fe1d4e;
+}
+
+
+
+/* ====== Media ====== */
+
+@media screen and (max-width: 600px) {
+    body {
+        margin: 30px;
+    }
+
+    .nav__list {
+        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-bottom: 80px;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(15px);
+        gap: 0;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+
+    .menu__icon {
+        display: flex;
+        font-size: 30px;
+    }
+
+    .nav__item {
+        display: block;
+        text-align: center;
+        
+    }
+
+    .nav__list .menu__icon {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    .home {
+        height: 60vh;
+        text-align: center;
+    }
+
+    .home__title {
+        width: 400px;
+        font-size: 40px;
+    }
+
+    .home__subtitle {
+        width: 300px;
+    }
+
+    .typing-text::after {
+        height: 50%;
+    }
+
+    .about__title {
+        text-align: center;
+        font-size: 70px;
+        line-height: 95%;
+    }
+
+    .about__text {
+        text-align: center;
+        margin: 0 auto;
+        width: 300px;
+        margin-top: 50px;
+        font-size: 22px;
+    }
+
+    .tabs__titles {
+        justify-content: center;
+    }
+
+    .tabs__button {
+        font-size: 25px;
+        margin-top: 2em;
+    }
+
+    .tabs__contents {
+        height: 600px;
+        text-align: center;
+    }
+
+    .tabs__content#skills {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.4s ease, visibility 0s 0s;
+    }
+
+    .skills-experience__list {
+        font-size: 22px;
+        width: 300px;
+        margin: 0 auto;
+        gap: 2em;
+    }
+
+    .services {
+        align-items: center;
+    }
+
+    .services__list {
+        flex-direction: column;
+    }
+
+    .services__item {
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        background-color: black;
+        border: 2px solid #fe1d4e;
+    }
+
+    .services__item:hover {
+        transform: translateY(0);
+        background-color: black;
+    }
+
+    .services__icon {
+        font-size: 50px;
+    }
+
+    .services__name {
+        text-align: center;
+    }
+
+    .web {
+        width: 100px;
+    }
+
+    .services__description {
+        text-align: center;
+    }
+
+    .projects {
+        align-items: center;
+    }
+
+    .projects__list {
+        flex-direction: column;
+    }
+
+    .projects__item {
+        width: 300px;
+    }                                                       
+
+    .projects__overlay {
+        height: 100%;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(12px);
+    }
+
+    .contact__container {
+        align-items: center;
+    }
+
+    .contacts__mail {
+        margin-top: 20px;
+    }
+
+    .contacts__link {
+        color: #fe1d4e;
+    }
+
+    .contacts__link:hover {
+        transform: scale(1);
+        color: #fe1d4e;
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A portfolio of Alexander showcasing web design, frontend development, and React skills." />
+    <meta name="keywords" content="portfolio, web design, frontend development, React" />
+    <meta name="author" content="Alexander" />
+    <link rel="stylesheet" href="style.css">
+    <title>About</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a class="logo__link" href="../index.html">
+                <h1><span class="logo__highlight">A</span>lexander.</h1>
+            </a>
+        </div>
+        <nav class="header__nav">
+            <ul class="nav__list" id="side__list">
+                <li class="nav__item"><a class="nav__link" href="index.html">About</a></li>
+                <li class="nav__item"><a class="nav__link" href="../projects/index.html">Projects</a></li>
+                <li class="nav__item"><a class="nav__link" href="../skills/index.html">Skills & Services</a></li>
+                <li class="nav__item"><a class="nav__link" href="../index.html#contacts">Contacts</a></li>
+                <ion-icon class="menu__icon" name="close-outline" onclick="closeMenu()"></ion-icon>
+            </ul>
+            <ion-icon class="menu__icon" name="menu-outline" onclick="openMenu()"></ion-icon>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about">
+            <div class="about__header">
+                <h1>About Me</h1>                        
+            </div>            
+            <div class="bio">
+                <div class="image">
+                    <img src="img/IMG_0182.JPEG" alt="Me">
+                </div>
+                <div class="text">
+                    <p>Hi! My name is Alexander.</p>
+                    <p>I am 20 years old and I live in Poland.</p>
+                    <p>I'm currently studying at a technical school as a programmer,</p>
+                    <p>where I'm deepening my knowledge in the field of web development.</p>
+                    <br>
+                    <p>I have already mastered HTML, CSS, Bootstrap, as well as basic skills with JavaScript and React.</p>
+                    <p>I am constantly evolving and learning modern technologies to create user-friendly, stylish and functional web applications.</p>
+                    <br>
+                    <p>I strive to ensure that each of my work is not only technically sound,</p> 
+                    <p>but also aesthetically appealing to users</p>
+                    <p>I look forward to new projects and challenges! 😊</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 <span>A</span>lexander. <span>A</span>ll rights reserved.</p>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ====== Default Settings ====== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Poppins", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: black;
+    opacity: 0;
+    transform: translateY(50px); /* Чтобы элементы слегка "поднимались" при появлении */
+    animation: fadeIn 1.5s ease-out forwards; /* Анимация для плавного появления */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Когда элементы появляются, они возвращаются в нормальное положение */
+    }
+}
+
+/* ====== ScrollBar ====== */
+
+.smooth-scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #fe1d4e;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* ====== Header ====== */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.header__logo {
+    cursor: default;
+}
+
+.logo__link {
+    color: white;
+}
+
+.logo__highlight {
+    color: #fe1d4e;
+}
+
+.nav__list {
+    display: flex;
+    gap: 3em;
+}
+
+.nav__link {
+    position: relative;
+    color: white;
+    padding: 0 10px;
+    transition: all .5s ease-in-out;
+}
+
+.nav__link::before {
+    position: absolute;
+    content: "";
+    background-color: #fe1d4e;
+    height: 2px;
+    left: 0;
+    bottom: -10px;
+    width: 0%;
+    transition: all .3s ease;
+}
+
+.nav__link:hover::before {
+    width: 100%;
+}
+
+.nav__link:hover {
+    color: #fe1d4e;
+}
+
+.nav__item {
+    margin: 10px 0;
+}
+
+.menu__icon {
+    display: none;
+}
+
+/* ====== Main Settings ===== */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 10vh);
+}
+
+/* ====== About ====== */
+
+.about {
+    user-select: none;
+}
+
+.bio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    color: white;
+}
+
+.about__header {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 50px;
+    height: 200px;
+}
+
+.about__header h1 {
+    font-size: 50px;
+    font-weight: 600;
+    border-bottom: 5px solid #fe1d4e;
+}
+
+.image {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    width: 800px;
+    height: 400px;
+    padding: 40px;
+}
+
+.text p {
+    font-size: 14px;
+    color: white;
+}
+
+footer {
+    cursor: default;
+    user-select: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    margin-top: 5em;
+}
+
+footer span {
+    color: #fe1d4e;
+}
+
+/* ====== Media ====== */
+
+@media screen and (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        margin: 30px;
+        gap: 15em;
+    }
+
+    .nav__list {
+        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-bottom: 80px;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(15px);
+        gap: 0;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+
+    .menu__icon {
+        display: flex;
+        font-size: 30px;
+    }
+
+    .nav__item {
+        display: block;
+        text-align: center;
+        
+    }
+
+    .nav__list .menu__icon {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    .bio {
+        flex-direction: column;
+        gap: 10em;
+    }
+
+    .image {
+        width: 300px;
+    }
+
+    .text {
+        width: 300px;
+    }
+
+    footer {
+        margin-top: 10em;
+    }
+}
